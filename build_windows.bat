@@ -7,7 +7,7 @@ python -m pip install -r requirements-build.txt
 if errorlevel 1 goto failed
 
 echo Construction du fichier Windows...
-python -m PyInstaller --noconfirm --clean --onefile --windowed --name "Sabiloul Houda" --collect-all reportlab --collect-all openpyxl --collect-all arabic_reshaper --collect-all bidi main.py
+python -m PyInstaller --noconfirm --clean --onefile --windowed --name Sabiloul_houda --icon "%~dp0assets\logo_sabiloul_houda.ico" --add-data "%~dp0assets\logo_sabiloul_houda.png;assets" --specpath build --workpath build\pyinstaller --distpath dist --collect-all reportlab --collect-all openpyxl --collect-all arabic_reshaper --collect-all bidi src\main.py
 if errorlevel 1 goto failed
 
 echo.
